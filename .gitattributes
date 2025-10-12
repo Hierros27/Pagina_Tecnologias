@@ -1,2 +1,26 @@
-# Auto detect text files and perform LF normalization
+# =======================================
+# CONFIGURACIÓN GENERAL
+# =======================================
 * text=auto
+
+# =======================================
+# ARCHIVOS DE TEXTO (HTML, CSS, ETC.)
+# =======================================
+*.html text
+*.css text
+*.md text
+*.json text
+*.yml text
+*.xml text
+*.svg text
+
+# =======================================
+# ARCHIVOS BINARIOS (NO SE DEBEN ALTERAR)
+# =======================================
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
