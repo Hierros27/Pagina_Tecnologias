@@ -1,11 +1,11 @@
-/* ESTILOS GENERALES*/
+/* === ESTILOS GENERALES === */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #F2F2F2;
 }
 
-/* Barra de Navegación - Header*/
+/* === BARRA DE NAVEGACIÓN === */
 .navbar {
   position: fixed;
   top: 0;
@@ -15,29 +15,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 80px;
+  padding: 10px 50px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 22px;
-  color: #006A4E;
-  font-weight: 500;
+  z-index: 1000;
 }
 
 .logo img {
   height: 50px;
-  margin-right: 10 px;
+  margin-right: 10px; /* corregido */
 }
 
-.logo .highlight {
-  color: #3EB489;
-  font-weight: 600;
-}
-
+/* Enlaces de navegación */
 .nav-links {
   list-style: none;
   display: flex;
@@ -56,4 +44,51 @@ body {
 
 .nav-links a:hover {
   color: #008080;
+}
+
+/* === MENÚ MÓVIL === */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #004242;
+  cursor: pointer;
+}
+
+/* Ocultamos el checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 25px;
+  }
+
+  /* Ocultar enlaces en móvil por defecto */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #F2F2F2;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  /* Mostrar el menú cuando el checkbox está activo */
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  /* Mostrar icono ☰ */
+  .menu-icon {
+    display: block;
+  }
 }
