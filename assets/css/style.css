@@ -71,42 +71,40 @@ body {
   color: #008080;
 }
 
-/* === MENÚ MÓVIL (sin cambio funcional) === */
-.menu-icon {
-  display: none;
-  font-size: 28px;
-  color: #004242;
-  cursor: pointer;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-/* === AJUSTES RESPONSIVOS INTERMEDIOS === */
-@media (max-width: 1200px) {
-  .navbar {
-    padding: 10px 22px;
-  }
-  .nav-links {
-    gap: 18px;
-  }
-}
-
-@media (max-width: 992px) {
-  .nav-links {
-    gap: 14px;
-    font-size: 15px;
-  }
-}
-
-/* === MENU MÓVIL (ya provisto antes) === */
+/* === MENU MÓVIL === */
 @media (max-width: 768px) {
-  .navbar { padding: 10px 25px; }
-  .nav-links { display: none; position: absolute; top: 70px; right: 0;
-               background-color: #F2F2F2; flex-direction: column; width: 100%;
-               text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  .nav-links li { padding: 15px 0; }
-  #menu-toggle:checked + .menu-icon + .nav-links { display: flex; }
-  .menu-icon { display: block; }
+  .navbar {
+    padding: 10px 25px;
+  }
+
+  /* Oculta los enlaces hasta que se active el menú */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #F2F2F2;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  /* 🔹 Nuevo orden: el ícono a la derecha */
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    color: #004242;
+    cursor: pointer;
+    margin-left: auto; /* esto empuja el ícono a la derecha */
+  }
+
+  /* Cuando el checkbox esté activado, muestra el menú */
+  #menu-toggle:checked + label + .nav-links {
+    display: flex;
+  }
 }
