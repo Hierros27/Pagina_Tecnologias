@@ -1,0 +1,59 @@
+/* ESTILOS GENERALES*/
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F2F2F2;
+}
+
+/* Barra de Navegación - Header*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F2F2F2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: #006A4E;
+  font-weight: 500;
+}
+
+.logo img {
+  height: 35px;
+  margin-right: 10px;
+}
+
+.logo .highlight {
+  color: #3EB489;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #004242;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #008080;
+}
