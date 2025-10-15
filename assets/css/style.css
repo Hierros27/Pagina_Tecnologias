@@ -72,6 +72,9 @@ body {
 }
 
 /* === MENU MÓVIL === */
+#menu-toggle {
+  display: none;
+}
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 25px;
