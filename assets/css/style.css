@@ -1,3 +1,12 @@
+/* -------------------------
+   Box sizing (mejor layout)
+   ------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* === ESTILOS GENERALES === */
 body {
   margin: 0;
@@ -13,23 +22,38 @@ body {
   width: 100%;
   background-color: #F2F2F2;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* usamos flex-start y margin-left:auto en nav-links */
   align-items: center;
-  padding: 10px 50px;
+  padding: 10px 30px;            /* reducido para evitar overflow */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
 .logo img {
   height: 50px;
-  margin-right: 10px; /* corregido */
+  margin-right: 10px; /* corregido (sin espacio) */
+  display: block;
 }
 
 /* Enlaces de navegación */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 24px;          /* un poco menor para que quepan */
+  margin: 0;
+  padding: 0;
+  margin-left: auto;  /* <- esto empuja los links al extremo derecho */
+  flex-wrap: nowrap;  /* evitar que se rompan en varias líneas */
+  align-items: center;
+}
+
+.nav-links li {
   margin: 0;
   padding: 0;
 }
@@ -40,13 +64,14 @@ body {
   font-size: 16px;
   font-weight: 500;
   transition: color 0.3s;
+  white-space: nowrap; /* evita quiebres de palabra en los enlaces */
 }
 
 .nav-links a:hover {
   color: #008080;
 }
 
-/* === MENÚ MÓVIL === */
+/* === MENÚ MÓVIL (sin cambio funcional) === */
 .menu-icon {
   display: none;
   font-size: 28px;
@@ -54,41 +79,34 @@ body {
   cursor: pointer;
 }
 
-/* Ocultamos el checkbox */
 #menu-toggle {
   display: none;
 }
 
-/* Adaptación a pantallas pequeñas */
-@media (max-width: 768px) {
+/* === AJUSTES RESPONSIVOS INTERMEDIOS === */
+@media (max-width: 1200px) {
   .navbar {
-    padding: 10px 25px;
+    padding: 10px 22px;
   }
-
-  /* Ocultar enlaces en móvil por defecto */
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: #F2F2F2;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 18px;
   }
+}
 
-  .nav-links li {
-    padding: 15px 0;
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 14px;
+    font-size: 15px;
   }
+}
 
-  /* Mostrar el menú cuando el checkbox está activo */
-  #menu-toggle:checked + .menu-icon + .nav-links {
-    display: flex;
-  }
-
-  /* Mostrar icono ☰ */
-  .menu-icon {
-    display: block;
-  }
+/* === MENU MÓVIL (ya provisto antes) === */
+@media (max-width: 768px) {
+  .navbar { padding: 10px 25px; }
+  .nav-links { display: none; position: absolute; top: 70px; right: 0;
+               background-color: #F2F2F2; flex-direction: column; width: 100%;
+               text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  .nav-links li { padding: 15px 0; }
+  #menu-toggle:checked + .menu-icon + .nav-links { display: flex; }
+  .menu-icon { display: block; }
 }
