@@ -72,6 +72,16 @@ body {
 }
 
 /* === MENU MÓVIL === */
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* ======= VISTA MÓVIL ======= */
 #menu-toggle {
   display: none;
 }
