@@ -196,7 +196,42 @@ img {
   font-weight: 600;
   display: inline-block;
 }
+.HeaderS {
+  position: relative;
+  background: url("../images/Images_Servicios/Header_S.jpg") center/cover no-repeat;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.HeaderS::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 111, 120, 0.5);
+}
 
+.HeaderS__inner {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+}
+
+.HeaderS h1 {
+  font-size: clamp(40px, 5vw, 60px);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.HeaderS .subtitle {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--brand);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+}
 /* ==============================
    LISTA DE PROYECTOS
 ============================== */
@@ -498,5 +533,165 @@ img {
   .servicios {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* ==============================
+   LISTA DE SERVICIOS
+============================== */
+/* Variables de color */
+:root {
+  --bg-alt: #f0f0f0;
+  --light: #fff;
+  --text: #333;
+  --brand: #00a89d;
+  --white: #fff;
+}
+
+/* Estilo para la imagen y el texto */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 60px 0;
+  background-color: var(--brand);
+}
+
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.project__image {
+  position: relative;
+}
+
+.project__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Overlay con texto sobre la imagen */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--brand);
+  color: var(--white);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.overlay p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Botón de expansión */
+.expand-btn {
+  display: none;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  color: var(--brand);
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* Footer de la sección */
+.projects-footer {
+  background-color: var(--bg-alt);
+  padding: 60px 0;
+}
+
+.projects-footer .container {
+  text-align: center;
+}
+
+.projects-footer .brand {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--brand);
+}
+
+.projects-footer p {
+  color: var(--text);
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+  .overlay {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .badge {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  /* Asegurarnos de que la imagen se ajuste correctamente */
+  .project__image img {
+    height: auto;
+    max-height: 400px;
+  }
+
+  /* Mostrar el botón de expansión */
+  .expand-btn {
+    display: inline-block;
+  }
+
+  .overlay .description {
+    display: none; /* Ocultar el texto por defecto */
+  }
+}
+
+/* Media Query para pantallas muy pequeñas (teléfonos) */
+@media screen and (max-width: 480px) {
+  .overlay {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .badge {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .overlay p {
+    font-size: 12px;
+  }
+
+  /* Imagen sin bordes */
+  .project__image img {
+    height: auto;
+    max-height: 300px;
   }
 }
