@@ -1,0 +1,121 @@
+/* ====Box sizing ===*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* === ESTILOS GENERALES === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F2F2F2;
+}
+
+/* === BARRA DE NAVEGACIÓN === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F2F2F2;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 10px 30px;          
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+  display: block;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;          
+  margin: 0;
+  padding: 0;
+  margin-left: auto;  
+  flex-wrap: nowrap;  
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #004242;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #008080;
+}
+
+/* === MENU MÓVIL === */
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* ======= VISTA MÓVIL ======= */
+#menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 25px;
+  }
+
+  /* Oculta los enlaces hasta que se active el menú */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #F2F2F2;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  /* Ícono a la derecha */
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    color: #004242;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  /* Cuando el checkbox esté activado, muestra el menú */
+  #menu-toggle:checked + label + .nav-links {
+    display: flex;
+  }
+}
