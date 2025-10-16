@@ -30,3 +30,96 @@
   </main>
 </body>
 </html>
+<main class="projects" style="padding-top: 80px;">
+  <!-- HeaderP -->
+  <section class="HeaderS">
+    <div class="HeaderS__inner container">
+      <h1>Servicios</h1>
+      <p class="subtitle">Ofrecemos soluciones diseñadas para adaptarse a tus necesidades, combinando calidad, confianza y compromiso.</p>
+    </div>
+  </section>
+
+  <!-- Lista de Servicios -->
+  <section class="project-list container">
+    <!-- P1 - Diseño -->
+    <article class="project">
+      <div class="project__image">
+        <img src="assets/images/Images_Servicios/P1_S.jpg" alt="Diseño">
+        <div class="overlay">
+          <span class="badge">Diseño</span>
+          <p class="description">
+            Nuestro servicio combina estética, funcionalidad y personalidad para crear ambientes que reflejen tu estilo de vida. 
+            Desde la selección de colores, mobiliario, materiales, hasta la distribución y los detalles finales, cuidamos cada aspecto y detalle para lograr un espacio pensado especialmente para ti.
+          </p>
+          <button class="expand-btn">&#8594;</button> <!-- Botón de expansión en dispositivos pequeños -->
+        </div>
+      </div>
+    </article>
+
+    <!-- P2 - Decoración -->
+    <article class="project">
+      <div class="project__image">
+        <img src="assets/images/Images_Servicios/P2_S.jpg" alt="Decoración">
+        <div class="overlay">
+          <span class="badge">Decoración</span>
+          <p class="description">
+            Damos vida a cada rincón con detalles que marcan la diferencia. 
+            Nuestro servicio de decoración se enfoca en realzar la belleza de tus espacios a través de accesorios, iluminación y elementos únicos que reflejan tu personalidad. 
+            Creamos ambientes cálidos y sofisticados, cuidando cada detalle para lograr la armonía perfecta.
+          </p>
+          <button class="expand-btn">&#8594;</button> <!-- Botón de expansión en dispositivos pequeños -->
+        </div>
+      </div>
+    </article>
+
+    <!-- P3 - Asesoría -->
+    <article class="project">
+      <div class="project__image">
+        <img src="assets/images/Images_Servicios/P3_S.jpg" alt="Asesoría">
+        <div class="overlay">
+          <span class="badge">Asesoría</span>
+          <p class="description">
+            Te acompañamos en cada paso para que tomes las mejores decisiones. 
+            Nuestra asesoría personalizada te brinda ideas, recomendaciones de distribución, elección de colores, materiales y estilos que se adapten a tus gustos, presupuesto y necesidades. 
+            Con nuestra guía podrás darle a tu hogar u oficina el toque perfecto.
+          </p>
+          <button class="expand-btn">&#8594;</button> <!-- Botón de expansión en dispositivos pequeños -->
+        </div>
+      </div>
+    </article>
+  </section>
+
+<!-- SECCIÓN LLAMADO A LA ACCIÓN -->
+<section class="cta">
+  <div class="cta-overlay">
+    <h2>Cada gran transformación<br>empieza con una conversación</h2>
+    <a href="contacto.html" class="btn-cta">Contáctanos</a>
+  </div>
+</section>
+
+  <!-- FOOTER DE LA SECCIÓN -->
+   <!-- FOOTER DE LA SECCIÓN -->
+ <footer class="projects-footer">
+    <img src="assets/images/imagesInicio/logo.png" alt="UmbralHome">
+    <p>
+      Creamos espacios únicos y funcionales, diseñados para reflejar tu estilo
+      y transformar tu hogar o negocio en un lugar armonioso y lleno de personalidad.
+    </p>
+</main>
+<script>
+  // Función para expandir/contraer el texto
+  document.querySelectorAll('.expand-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const description = this.previousElementSibling;
+      if (description.style.display === 'none') {
+        description.style.display = 'block';
+        this.textContent = '←'; // Cambia el icono al hacer clic
+      } else {
+        description.style.display = 'none';
+        this.textContent = '→'; // Cambia el icono de nuevo
+      }
+    });
+  });
+</script>
+</body>
+</html>
