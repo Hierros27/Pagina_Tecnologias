@@ -493,7 +493,7 @@ img {
   background-color: #004242;
 }
 
-/* Responsive */
+/* 📱 Responsive */
 @media (max-width: 768px) {
   .servicios {
     flex-direction: column;
