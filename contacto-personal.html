@@ -29,50 +29,61 @@
 
   <!-- BODYYYY -->
 
-    <main class="contenedor-personal">
+ <form action="procesar_personal.php" 
+      method="POST" 
+      enctype="multipart/form-data"
+      class="contenedor-personal">
 
   <h2 class="titulo-personal">¿Cómo es el espacio?</h2>
 
   <div class="opciones-espacio">
+
     <label class="opcion">
-      <input type="checkbox">
+      <input type="checkbox" name="espacios[]" value="Sala">
       <span>Sala</span>
     </label>
 
     <label class="opcion">
-      <input type="checkbox">
+      <input type="checkbox" name="espacios[]" value="Comedor">
       <span>Comedor</span>
     </label>
 
     <label class="opcion">
-      <input type="checkbox">
+      <input type="checkbox" name="espacios[]" value="Baño">
       <span>Baño</span>
     </label>
 
     <label class="opcion">
-      <input type="checkbox">
+      <input type="checkbox" name="espacios[]" value="Habitaciones">
       <span>Habitaciones</span>
     </label>
 
     <label class="opcion">
-      <input type="checkbox">
+      <input type="checkbox" name="espacios[]" value="Estudio">
       <span>Estudio</span>
     </label>
+
   </div>
 
-  <h2 class="titulo-personal">¿Aproximadamente que tan grande es?</h2>
-
-  <input type="text" class="input-texto" placeholder="Escriba aquí...">
+  <h2 class="titulo-personal">¿Aproximadamente qué tan grande es?</h2>
+  <input type="text" name="tamano" class="input-texto" placeholder="Escriba aquí...">
 
   <h2 class="titulo-personal">Describa su idea</h2>
+  <textarea name="descripcion" class="textarea-idea" placeholder="Describa su idea aquí..."></textarea>
 
-  <textarea class="textarea-idea" placeholder="Describa su idea aquí..."></textarea>
+  <!-- Input real (oculto) -->
+  <input type="file" id="imagenInput" name="imagen" accept="image/*" style="display:none;">
 
-  <button class="btn-espacio subir-img">Añadir imagen</button>
+  <!-- Tu botón bonito -->
+  <button type="button" class="btn-espacio subir-img" onclick="document.getElementById('imagenInput').click();">
+    Añadir imagen
+  </button>
 
-  <button class="btn-espacio finalizar">Finalizar</button>
+  <button type="submit" class="btn-espacio finalizar">Finalizar</button>
 
-</main>
+</form>
+
+
 
 
       <!-- Footer final (mismo estilo de Proyectos) -->

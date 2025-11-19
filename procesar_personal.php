@@ -7,26 +7,19 @@ if (!file_exists($carpeta)) {
 }
 
 // Procesar imagen
-$nombreFinal = "No se cargó ninguna imagen.";
-
 if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === 0) {
 
     $nombreTemp = $_FILES["imagen"]["tmp_name"];
     $nombreFinal = $carpeta . time() . "_" . basename($_FILES["imagen"]["name"]);
 
-    if (!move_uploaded_file($nombreTemp, $nombreFinal)) {
-        $nombreFinal = "Error al guardar la imagen.";
-    }
+    move_uploaded_file($nombreTemp, $nombreFinal);
 }
 
 // Procesar checkboxes
 $espacios = isset($_POST["espacios"]) ? $_POST["espacios"] : [];
 
-// Respuesta
+// Aquí puedes guardar todo en un JSON, BD o enviarlo por correo.
+// Te dejo un mensaje simple:
 echo "<h2>Datos recibidos exitosamente</h2>";
-
-echo "<p><strong>Espacios seleccionados:</strong> " . 
-     (!empty($espacios) ? implode(", ", $espacios) : "Ninguno") . 
-     "</p>";
-
-echo "<p><strong>Resultado de carga de imagen:</strong> $nombreFinal</p>";
+echo "<p>Espacios seleccionados: " . implode(", ", $espacios) . "</p>";
+echo "<p>Imagen guardada en: $nombreFinal</p>";
