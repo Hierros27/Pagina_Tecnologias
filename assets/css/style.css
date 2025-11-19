@@ -644,7 +644,7 @@ img {
 
 .field label {
   display: block;
-  color: #fff;
+  color: #000;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -951,4 +951,283 @@ img {
     height: auto;
     max-height: 300px;
   }
+}
+
+/***************** ORDEN CONACTO **********/
+.contenedor-ordenContacto {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #1fa79b;
+  text-align: center;
+  color: white;
+}
+
+/* TITULOS */
+.titulo-ordenContacto {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* OPCIONES */
+.opciones-ordenContacto {
+  color: #1b3d36;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 45px;
+}
+
+.opcion {
+  background-color: #c8f0eb;
+  padding: 18px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.opcion input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+}
+
+/* BOTONES */
+.botones-espacio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-espacio {
+  background-color: #0c7e75;
+  border: none;
+  padding: 15px 0;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-espacio:hover {
+  background-color: #0b6c65;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+  .botones-espacio {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn-espacio {
+    width: 40%;
+  }
+}
+
+/***** CONTACTO-PERSONAL *********/
+.contenedor-personal {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #1fa79b;
+  text-align: center;
+  color: white;
+}
+
+/* TITULOS */
+.titulo-personal {
+  font-size: 1.5rem;
+  margin: 25px 0;
+  font-weight: 500;
+}
+
+/* LISTA DE OPCIONES */
+.opciones-espacio {
+  color: #1b3d36;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.opcion {
+  background-color: #c8f0eb;
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.opcion input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+/* INPUTS */
+.input-texto {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px;
+  background-color: #c8f0eb;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+.textarea-idea {
+  width: 80%;
+  max-width: 550px;
+  height: 140px;
+  padding: 15px;
+  background-color: #c8f0eb;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  resize: none;
+  font-size: 1rem;
+}
+
+/* BOTONES */
+.btn-espacio {
+  background-color: #0c7e75;
+  border: none;
+  padding: 15px 0;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  width: 70%;
+  max-width: 300px;
+  margin: 10px auto;
+  display: block;
+}
+
+.btn-espacio:hover {
+  background-color: #0b6c65;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+
+  .input-texto,
+  .textarea-idea {
+    width: 60%;
+  }
+
+  .btn-espacio {
+    width: 40%;
+  }
+}
+
+/***** SEGUIMIENTO *******/
+.seguimiento-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* TITULO */
+.seguimiento-titulo h2 {
+  background-color: #C7EDE5;
+  color: #006E6A;
+  padding: 18px;
+  border-radius: 5px;
+  font-size: 22px;
+  width: 90%;
+  margin: 0 auto 25px auto;
+  font-weight: bold;
+}
+
+/* TEXTO DESCRIPTIVO */
+.seguimiento-descripcion {
+  background-color: #C7EDE5;
+  padding: 12px 18px;
+  font-size: 14px;
+  color: #006E6A;
+  width: 90%;
+  margin: 0 auto 40px auto;
+  border-radius: 5px;
+}
+
+/* ----- BARRA DE PROGRESO ----- */
+.progress-wrapper {
+  position: relative;
+  margin-top: 50px;
+}
+
+.progress-line {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: #007F78;
+  border-radius: 4px;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.step {
+  text-align: center;
+  width: 22%;
+}
+
+.step p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* CÍRCULOS */
+.step-circle {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  margin: auto;
+  border: 4px solid #007F78;
+}
+
+/* Paso completado */
+.step.completed .step-circle {
+  background: #C7EDE5;
+}
+
+/* Paso activo */
+.step.active .step-circle {
+  background: #FFFFFF;
+  border-color: #00A09A;
+  box-shadow: 0px 0px 8px rgba(0, 160, 154, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .step p {
+    font-size: 12px;
+  }
+
+  .step-circle {
+    width: 26px;
+    height: 26px;
+  }
+
+  .progress-line {
+    top: 18px;
+    height: 6px;
+  }
 }
