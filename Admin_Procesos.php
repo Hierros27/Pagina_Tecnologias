@@ -8,6 +8,9 @@ if (!isset($_SESSION['admin_id'])) {
     exit;
 }
 
+// (Opcional) Nombre del admin logueado
+$adminNombre = isset($_SESSION['admin_nombre']) ? $_SESSION['admin_nombre'] : 'Administrador';
+
 // Flag para el popup de fecha enviada (viene por sesión)
 $mostrarModalFecha = !empty($_SESSION['fecha_enviada']);
 if ($mostrarModalFecha) {
@@ -44,7 +47,10 @@ $result = $conn->query($sql);
     <nav class="admin-nav">
       <a href="Admin_Bandeja.php">Bandeja de entrada</a>
       <a href="Admin_Procesos.php" class="active">Procesos</a>
-      <a href="logout.php" class="logout">Cerrar sesión</a>
+      <span class="admin-user-tag">
+      <?php echo htmlspecialchars($adminNombre, ENT_QUOTES, 'UTF-8'); ?>
+    </span>
+    <a href="logout.php" class="logout">Cerrar sesión</a>
     </nav>
   </header>
 
