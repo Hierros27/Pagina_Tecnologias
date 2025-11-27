@@ -23,7 +23,7 @@
       <li><a href="index.html">Inicio</a></li>
       <li><a href="proyectos.html">Proyectos</a></li>
       <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
     </ul>
   </header>
 
