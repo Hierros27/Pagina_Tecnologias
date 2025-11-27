@@ -263,5 +263,57 @@
         "descripcion": "Un estudio donde se pueda leer y disfrutar de un café.",
         "imagen_ruta": "uploads\/1764210860_ideaCafeEstudio.jpeg",
         "fecha_creacion": "2025-11-27 03:34:20"
+    },
+    {
+        "id": 1,
+        "nombre": "Manuel Jordan",
+        "apellido": "Jordan",
+        "correo": "aaa@gmail.com",
+        "tipo_servicio": "diseno",
+        "tipo_espacio": "personal",
+        "espacio_detalle": "sala",
+        "tamano": "22 m2",
+        "descripcion": "aaa",
+        "imagen_ruta": "uploads\/1764219247_ChatGPT Image 9 nov 2025, 09_58_02 a.m..png",
+        "fecha_creacion": "2025-11-26 23:54:07"
+    },
+    {
+        "id": 2,
+        "nombre": "Felipe Mena",
+        "apellido": "Mena",
+        "correo": "Felipe@gmail.com",
+        "tipo_servicio": "diseno",
+        "tipo_espacio": "trabajo",
+        "espacio_detalle": "pasillos",
+        "tamano": "19 m2",
+        "descripcion": "qqq",
+        "imagen_ruta": "uploads\/1764219503_ChatGPT Image 19 oct 2025, 11_43_41 p.m..png",
+        "fecha_creacion": "2025-11-26 23:58:23"
+    },
+    {
+        "id": 3,
+        "nombre": "Oscar Manuel Perez",
+        "apellido": "Perez",
+        "correo": "cafe@gmail.com",
+        "tipo_servicio": "asesoramiento",
+        "tipo_espacio": "personal",
+        "espacio_detalle": "estudio",
+        "tamano": "15 m2",
+        "descripcion": "Deseo un estudio donde pueda leer y tomar café.",
+        "imagen_ruta": "uploads\/1764220190_ideaCafeEstudio.jpeg",
+        "fecha_creacion": "2025-11-27 00:09:50"
+    },
+    {
+        "id": 4,
+        "nombre": "Santiago Peñaloz",
+        "apellido": "Peñaloz",
+        "correo": "Sant@gmail.com",
+        "tipo_servicio": "decoracion",
+        "tipo_espacio": "trabajo",
+        "espacio_detalle": "sala_reuniones",
+        "tamano": "40",
+        "descripcion": "Espacio inclusivo con mis empleados.",
+        "imagen_ruta": "uploads\/1764220480_ARCO.jpg",
+        "fecha_creacion": "2025-11-27 00:14:40"
     }
 ]

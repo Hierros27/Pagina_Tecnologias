@@ -1,7 +1,8 @@
 <?php
 session_start();
+
+// Servicios seleccionados en el paso anterior (si existen)
 $tipo_servicio = $_SESSION['tipo_servicio'] ?? [];
-$tipo_espacio  = $_SESSION['tipo_espacio'] ?? 'trabajo';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ $tipo_espacio  = $_SESSION['tipo_espacio'] ?? 'trabajo';
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    /* === NUEVO: estilo para la vista previa de imagen === */
+    /* Estilo para la vista previa de imagen */
     .preview-container {
       margin-top: 12px;
       display: flex;
@@ -25,7 +26,7 @@ $tipo_espacio  = $_SESSION['tipo_espacio'] ?? 'trabajo';
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      display: none; /* oculta hasta cargar */
+      display: none; /* oculto hasta cargar */
     }
   </style>
 </head>
@@ -56,78 +57,77 @@ $tipo_espacio  = $_SESSION['tipo_espacio'] ?? 'trabajo';
 
       <form id="formTrabajo" action="guardar_encargo.php" method="post" enctype="multipart/form-data">
       
-      <?php foreach ($tipo_servicio as $ts): ?>
-        <input type="hidden" name="tipo_servicio[]" value="<?php echo htmlspecialchars($ts, ENT_QUOTES, 'UTF-8'); ?>">
-      <?php endforeach; ?>
+        <!-- Tipo(s) de servicio seleccionados en el paso 1 -->
+        <?php foreach ($tipo_servicio as $ts): ?>
+          <input type="hidden" name="tipo_servicio[]" value="<?php echo htmlspecialchars($ts, ENT_QUOTES, 'UTF-8'); ?>">
+        <?php endforeach; ?>
 
-      <input type="hidden" name="tipo_espacio" value="<?php echo htmlspecialchars($tipo_espacio, ENT_QUOTES, 'UTF-8'); ?>">
+        <!-- Tipo de espacio fijo: trabajo -->
+        <input type="hidden" name="tipo_espacio" value="trabajo">
 
-      <!-- Identificador del tipo de espacio (IMPORTANTE) -->
-      <input type="hidden" name="tipo_espacio" value="trabajo">
+        <!-- ¿Cómo es el espacio? -->
+        <section class="bloque-pregunta">
+          <h2>¿Cómo es el espacio?</h2>
 
-      <!-- ¿Cómo es el espacio? -->
-      <section class="bloque-pregunta">
-        <h2>¿Cómo es el espacio?</h2>
+          <div class="servicio-opciones">
+            <label class="servicio-opcion">
+              <input type="checkbox" name="espacio_trabajo[]" value="oficinas">
+              <span class="servicio-opcion-box">
+                <span class="checkbox-custom"></span>
+                <span class="texto">Oficinas</span>
+              </span>
+            </label>
 
-        <div class="servicio-opciones">
-          <label class="servicio-opcion">
-            <input type="checkbox" name="espacio_trabajo[]" value="oficinas">
-            <span class="servicio-opcion-box">
-              <span class="checkbox-custom"></span>
-              <span class="texto">Oficinas</span>
-            </span>
-          </label>
+            <label class="servicio-opcion">
+              <input type="checkbox" name="espacio_trabajo[]" value="pasillos">
+              <span class="servicio-opcion-box">
+                <span class="checkbox-custom"></span>
+                <span class="texto">Pasillos</span>
+              </span>
+            </label>
 
-          <label class="servicio-opcion">
-            <input type="checkbox" name="espacio_trabajo[]" value="pasillos">
-            <span class="servicio-opcion-box">
-              <span class="checkbox-custom"></span>
-              <span class="texto">Pasillos</span>
-            </span>
-          </label>
+            <label class="servicio-opcion">
+              <input type="checkbox" name="espacio_trabajo[]" value="sala_reuniones">
+              <span class="servicio-opcion-box">
+                <span class="checkbox-custom"></span>
+                <span class="texto">Sala de reuniones</span>
+              </span>
+            </label>
+          </div>
+        </section>
 
-          <label class="servicio-opcion">
-            <input type="checkbox" name="espacio_trabajo[]" value="sala_reuniones">
-            <span class="servicio-opcion-box">
-              <span class="checkbox-custom"></span>
-              <span class="texto">Sala de reuniones</span>
-            </span>
+        <!-- Separador -->
+        <div class="form-servicio__separador"></div>
+
+        <!-- Tamaño -->
+        <section class="bloque-pregunta">
+          <h2>¿Aproximadamente qué tan grande es?</h2>
+          <input type="text" class="campo-medida" name="tamano_trabajo" placeholder="Ej: 120 m²">
+        </section>
+
+        <!-- Descripción -->
+        <section class="bloque-pregunta">
+          <h2>Describa su idea</h2>
+          <textarea class="campo-descripcion" name="descripcion_trabajo" placeholder="Escriba aquí su idea..."></textarea>
+        </section>
+
+        <!-- Añadir imagen -->
+        <div class="imagen-btn-wrap">
+          <label class="imagen-btn">
+            Añadir imagen
+            <input type="file" name="imagen_trabajo" id="imagen_trabajo" accept="image/*">
           </label>
         </div>
-      </section>
 
-      <!-- Separador -->
-      <div class="form-servicio__separador"></div>
+        <!-- Vista previa -->
+        <div class="preview-container">
+          <img id="preview-imagen" src="" alt="Vista previa">
+        </div>
 
-      <!-- Tamaño -->
-      <section class="bloque-pregunta">
-        <h2>¿Aproximadamente qué tan grande es?</h2>
-        <input type="text" class="campo-medida" name="tamano_trabajo" placeholder="Ej: 30 m²">
-      </section>
-
-      <!-- Descripción -->
-      <section class="bloque-pregunta">
-        <h2>Describa su idea</h2>
-        <textarea class="campo-descripcion" name="descripcion_trabajo" placeholder="Escriba aquí su idea..."></textarea>
-      </section>
-
-      <!-- Añadir imagen -->
-      <div class="imagen-btn-wrap">
-        <label class="imagen-btn">
-          Añadir imagen
-          <input type="file" name="imagen_trabajo" id="imagen_trabajo" accept="image/*">
-        </label>
-      </div>
-
-      <!-- NUEVO: vista previa -->
-      <div class="preview-container">
-        <img id="preview-imagen" src="" alt="Vista previa">
-      </div>
-
-      <!-- Finalizar -->
-      <div class="finalizar-wrap">
-        <button type="submit" class="btn-final">Finalizar</button>
-      </div>
+        <!-- Finalizar -->
+        <div class="finalizar-wrap">
+          <button type="submit" class="btn-final">Finalizar</button>
+        </div>
 
       </form>
 

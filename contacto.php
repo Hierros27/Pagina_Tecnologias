@@ -27,8 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['apellido'] = trim($apellido);
         $_SESSION['correo']   = trim($correo);
 
-        // Aquí NO insertamos todavía en la BD: lo hacemos en guardar_encargo.php,
-        // junto con el resto de datos (tipo_servicio, espacio, etc.).
         header('Location: form_servicio_paso1.php');
         exit;
     }

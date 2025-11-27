@@ -8,10 +8,10 @@ if (!isset($_SESSION['admin_id'])) {
     exit;
 }
 
-// (Opcional) Nombre del admin logueado
+// Nombre del admin logueado
 $adminNombre = isset($_SESSION['admin_nombre']) ? $_SESSION['admin_nombre'] : 'Administrador';
 
-// Flag para el popup de fecha enviada (viene por sesión)
+// Para el popup de fecha enviada (viene por sesión)
 $mostrarModalFecha = !empty($_SESSION['fecha_enviada']);
 if ($mostrarModalFecha) {
     // Lo usamos una sola vez

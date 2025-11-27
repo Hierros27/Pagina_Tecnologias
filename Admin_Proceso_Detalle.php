@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guardar_fecha'])) {
         $stmtUpdate->close();
     }
 
-    // ✅ Popup y regreso a la lista de procesos
+    //  Mensaje emergente y regreso a la lista de procesos
     echo "<script>
             alert('Se ha enviado la fecha potencial al cliente.');
             window.location.href = 'Admin_Procesos.php';

@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin_id'])) {
     exit;
 }
 
-// (Opcional) Nombre del admin logueado
+// Nombre del admin logueado
 $adminNombre = isset($_SESSION['admin_nombre']) ? $_SESSION['admin_nombre'] : 'Administrador';
 
 // Obtener los encargos pendientes
@@ -49,7 +49,7 @@ $result = $conn->query($sql);
 
 <main class="encargos">
 
-  <!-- Encabezado tipo tarjeta blanca -->
+  <!-- Encabezado -->
   <section class="encargos-header">
     <div class="encargos-header__inner">
       <h1>Encargos nuevos</h1>

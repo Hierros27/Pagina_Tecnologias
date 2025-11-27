@@ -26,8 +26,8 @@ if ($id <= 0 || ($accion !== 'aceptar' && $accion !== 'rechazar')) {
 // ==============================
 // DEFINIR NUEVO ESTADO VÁLIDO
 // ==============================
-// Tu ENUM en la BD es: 'pendiente','en_proceso','rechazado','finalizado'
-// Así que aquí usamos 'en_proceso' (NO 'activo')
+// ENUM en la BD es: 'pendiente','en_proceso','rechazado','finalizado'
+
 if ($accion === 'aceptar') {
     $nuevoEstado = 'en_proceso';
 } else {
