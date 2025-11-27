@@ -161,7 +161,7 @@ img {
 ============================== */
 .HeaderP {
   position: relative;
-  background: url("../images/Images_Proyectos/HeaderP.jpg") center/cover no-repeat;
+  background: url("../images/Images_Proyectos/HeaderP.png") center/cover no-repeat;
   min-height: 420px;
   display: flex;
   align-items: center;
@@ -267,24 +267,30 @@ img {
    FOOTER DE SECCIÓN
 ============================== */
 .projects-footer {
-  background: var(--light);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px 20px;
+  border-top: 3px solid rgba(15, 111, 120, 0.1);
   text-align: center;
-  padding: 40px 20px;
+  position: relative;           /* 👈 IMPORTANTE */
 }
 
-.projects-footer .brand {
-  font-weight: 800;
-  color: var(--brand);
-  font-size: 22px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+.projects-footer img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
 }
 
 .projects-footer p {
-  color: var(--text);
+  color: var(--brand);
   font-size: 15px;
-  max-width: 800px;
-  margin: 0 auto;
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0;
 }
 
 /* ==============================
@@ -362,7 +368,21 @@ img {
   .project__info p {
     font-size: 15px;
   }
+
+  @media (max-width: 600px) {
+  .projects-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .projects-footer p {
+    font-size: 14px;
+    max-width: 90%;
+  }
 }
+}
+
 /* =======================================
    PÁGINA INICIO
    ======================================= */
@@ -563,199 +583,6 @@ img {
   }
 }
 
-/* ===== CONTACTO ===== */
-
-.HeaderC {
-  position: relative;
-  background: url("../images/Images_Contacto/HeaderC.jpg") center/cover no-repeat;
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.HeaderC::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 111, 120, 0.35); /* velo suave */
-}
-
-.HeaderC__inner {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-}
-
-.HeaderC h1 {
-  font-size: clamp(38px, 5vw, 56px);
-  font-weight: 800;
-  margin-bottom: 16px;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
-
-.HeaderC .subtitle {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--brand);
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-}
-
-/* Intro tarjeta */
-.contact-intro {
-  background: var(--bg-alt);
-  padding: 40px 0 0;
-}
-
-.intro-card {
-  background: var(--light);
-  color: var(--text);
-  border-radius: 10px;
-  padding: 22px 24px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  margin: 0 auto 0; /* elimina el espacio inferior pero mantiene centrado */
-  font-size: 18px;
-  text-align: center;
-  max-width: 90%;
-}
-
-/* Formulario */
-.contact-form {
-  background: var(--bg-alt);
-  padding: 0 0 60px; /* quitamos el padding-top */
-}
-
-.contact-form form {
-  background: transparent;
-}
-
-.contact-form .row {
-  margin-bottom: 20px;
-}
-
-.contact-form .two-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-}
-
-.field label {
-  display: block;
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.field input,
-.field textarea {
-  width: 100%;
-  border: none;
-  outline: none;
-  background: #ffffff;
-  color: var(--text);
-  padding: 14px 16px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  font-size: 16px;
-}
-
-.field textarea {
-  resize: vertical;
-}
-
-/* Botón */
-.actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.btn-primary {
-  border: none;
-  background: var(--brand);
-  color: #fff;
-  font-weight: 700;
-  padding: 12px 34px;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
-  opacity: 0.95;
-}
-
-/* ==============================
-   FOOTER DE SECCIÓN
-============================== */
-.projects-footer {
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 24px 20px;
-  border-top: 3px solid rgba(15, 111, 120, 0.1);
-  text-align: center;
-}
-
-.projects-footer img {
-  height: 77px;
-  width: auto;
-  object-fit: contain;
-}
-
-.projects-footer p {
-  color: var(--brand);
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.4;
-  max-width: 700px;
-  margin: 0;
-}
-
-/* ==============================
-   RESPONSIVE DESIGN
-============================== */
-@media (max-width: 1024px) {
-  .HeaderC {
-    min-height: 360px;
-  }
-}
-
-@media (max-width: 768px) {
-  .HeaderC {
-    min-height: 300px;
-  }
-
-  .HeaderC .subtitle {
-    font-size: 14px;
-  }
-
-  .contact-form .two-cols {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .projects-footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .projects-footer p {
-    font-size: 14px;
-    max-width: 90%;
-  }
-}
-
 /* ==============================
    LISTA DE SERVICIOS
 ============================== */
@@ -898,336 +725,1313 @@ img {
   line-height: 1.8;
 }
 
-/* Media Query para pantallas pequeñas (móviles) */
-@media screen and (max-width: 768px) {
-  .overlay {
-    width: 90%;
-    padding: 15px;
-  }
 
-  .badge {
-    font-size: 16px;
-    padding: 6px 12px;
-  }
+/* ===== CONTACTO ===== */
 
-  .overlay p {
-    font-size: 14px;
-  }
-
-  /* Asegurarnos de que la imagen se ajuste correctamente */
-  .project__image img {
-    height: auto;
-    max-height: 400px;
-  }
-
-  /* Mostrar el botón de expansión */
-  .expand-btn {
-    display: inline-block;
-  }
-
-  .overlay .description {
-    display: none; /* Ocultar el texto por defecto */
-  }
+/* Fondo verde y espacio superior para que no se meta debajo del navbar */
+.contact {
+  background: #228F86;           /* mismo verde que paso1 */
+  padding-top: 80px;             /* altura del navbar + espacio */
 }
 
-/* Media Query para pantallas muy pequeñas (teléfonos) */
-@media screen and (max-width: 480px) {
-  .overlay {
-    width: 90%;
-    padding: 10px;
-  }
-
-  .badge {
-    font-size: 14px;
-    padding: 5px 10px;
-  }
-
-  .overlay p {
-    font-size: 12px;
-  }
-
-  /* Imagen sin bordes */
-  .project__image img {
-    height: auto;
-    max-height: 300px;
-  }
-}
-
-/***************** ORDEN CONACTO **********/
-.contenedor-ordenContacto {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #1fa79b;
-  text-align: center;
-  color: white;
-}
-
-/* TITULOS */
-.titulo-ordenContacto {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-/* OPCIONES */
-.opciones-ordenContacto {
-  color: #1b3d36;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 45px;
-}
-
-.opcion {
-  background-color: #c8f0eb;
-  padding: 18px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-.opcion input[type="checkbox"] {
-  width: 22px;
-  height: 22px;
-}
-
-/* BOTONES */
-.botones-espacio {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.btn-espacio {
-  background-color: #0c7e75;
-  border: none;
-  padding: 15px 0;
-  border-radius: 8px;
-  font-size: 1.3rem;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btn-espacio:hover {
-  background-color: #0b6c65;
-}
-
-/* RESPONSIVE */
-@media (min-width: 700px) {
-  .botones-espacio {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .btn-espacio {
-    width: 40%;
-  }
-}
-
-/***** CONTACTO-PERSONAL *********/
-.contenedor-personal {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #1fa79b;
-  text-align: center;
-  color: white;
-}
-
-/* TITULOS */
-.titulo-personal {
-  font-size: 1.5rem;
-  margin: 25px 0;
-  font-weight: 500;
-}
-
-/* LISTA DE OPCIONES */
-.opciones-espacio {
-  color: #1b3d36;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.opcion {
-  background-color: #c8f0eb;
-  padding: 15px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.opcion input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-}
-
-/* INPUTS */
-.input-texto {
-  width: 80%;
-  max-width: 500px;
-  padding: 12px;
-  background-color: #c8f0eb;
-  border: none;
-  border-radius: 6px;
-  margin-bottom: 35px;
-  font-size: 1rem;
-}
-
-.textarea-idea {
-  width: 80%;
-  max-width: 550px;
-  height: 140px;
-  padding: 15px;
-  background-color: #c8f0eb;
-  border: none;
-  border-radius: 6px;
-  margin-bottom: 25px;
-  resize: none;
-  font-size: 1rem;
-}
-
-/* BOTONES */
-.btn-espacio {
-  background-color: #0c7e75;
-  border: none;
-  padding: 15px 0;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  color: white;
-  cursor: pointer;
-  width: 70%;
-  max-width: 300px;
-  margin: 10px auto;
-  display: block;
-}
-
-.btn-espacio:hover {
-  background-color: #0b6c65;
-}
-
-/* RESPONSIVE */
-@media (min-width: 700px) {
-
-  .input-texto,
-  .textarea-idea {
-    width: 60%;
-  }
-
-  .btn-espacio {
-    width: 40%;
-  }
-}
-
-/***** SEGUIMIENTO *******/
-.seguimiento-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-}
-
-/* TITULO */
-.seguimiento-titulo h2 {
-  background-color: #C7EDE5;
-  color: #006E6A;
-  padding: 18px;
-  border-radius: 5px;
-  font-size: 22px;
-  width: 90%;
-  margin: 0 auto 25px auto;
-  font-weight: bold;
-}
-
-/* TEXTO DESCRIPTIVO */
-.seguimiento-descripcion {
-  background-color: #C7EDE5;
-  padding: 12px 18px;
-  font-size: 14px;
-  color: #006E6A;
-  width: 90%;
-  margin: 0 auto 40px auto;
-  border-radius: 5px;
-}
-
-/* ----- BARRA DE PROGRESO ----- */
-.progress-wrapper {
+.HeaderC {
   position: relative;
-  margin-top: 50px;
+  background: url("../images/Images_Contacto/HeaderC.png") center/cover no-repeat;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.progress-line {
+.HeaderC::after {
+  content: "";
   position: absolute;
-  top: 22px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: #007F78;
-  border-radius: 4px;
+  inset: 0;
+  background: rgba(15, 111, 120, 0.35); /* velo suave */
 }
 
-.progress-steps {
+.HeaderC__inner {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.HeaderC h1 {
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.HeaderC .subtitle {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Intro tarjeta */
+.contact-intro {
+  background: #228F86;   /* mismo verde que el form-servicio */
+  padding: 40px 0 0;
+}
+
+.intro-card {
+  background: var(--light);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 22px 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  margin: 0 auto 0;
+  font-size: 18px;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Formulario */
+.contact-form {
+  background: #228F86;   /* misma franja verde que Paso 1 */
+  padding: 0 0 60px;
+}
+
+.contact-form form {
+  background: transparent;
+}
+
+.contact-form .row {
+  margin-bottom: 20px;
+}
+
+.contact-form .two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.field label {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  color: var(--text);
+  padding: 14px 16px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  font-size: 16px;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+/* Botón */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  border: none;
+  background: #17645E;       /* igual a los botones de Paso 1 */
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 34px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+  opacity: 0.95;
+  background: #0F4C48;       /* hover más oscuro, coherente con Paso 1 */
+}
+
+/* ==============================
+   FOOTER DE SECCIÓN
+============================== */
+.projects-footer {
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px 20px;
+  border-top: 3px solid rgba(15, 111, 120, 0.1);
+  text-align: center;
+}
+
+.projects-footer img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.projects-footer p {
+  color: var(--brand);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 1024px) {
+  .HeaderC {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .HeaderC {
+    min-height: 300px;
+  }
+
+  .HeaderC .subtitle {
+    font-size: 14px;
+  }
+
+  .contact-form .two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .projects-footer p {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+/* =======================================
+   PÁGINA INICIO
+   ======================================= */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("../images/imagesInicio/salon_inicio_1.png");  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #004242;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #004242;
+  margin-bottom: 40px;
+  line-height: 1.3;
+}
+
+/* Logo debajo del texto */
+.hero-logo {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 6px;
+}
+
+.hero-logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+/* 🔹 Versión móvil */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-logo img {
+    max-height: 45px;
+  }
+}
+
+/* ============================
+   SECCIÓN ¿QUÉ OFRECEMOS?
+   ============================ */
+
+.ofrecemos {
+  background-color: #009688; /* verde principal */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.ofrecemos h2 {
+  color: #004242;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  background-color: #d5f3eb;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 6px;
+}
+
+.servicios {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.servicio {
+  background-color: #d5f3eb;
+  border-radius: 6px;
+  max-width: 300px;
+  text-align: left;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.servicio img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.servicio h3 {
+  background-color: #d5f3eb;
+  color: #004242;
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.servicio p {
+  padding: 15px;
+  color: #004242;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Botón “Ver más” */
+.boton-ofrecemos {
+  margin-top: 40px;
+}
+
+.boton-ofrecemos a {
+  background-color: #006d66;
+  color: #ffffff;
+  padding: 12px 35px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.boton-ofrecemos a:hover {
+  background-color: #004242;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .servicios {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ======================
+   HEADER ADMIN
+   ====================== */
+
+.admin-navbar {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  border-bottom: 2px solid #004446;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.step {
-  text-align: center;
-  width: 22%;
-}
-
-.step p {
-  margin-top: 10px;
-  font-size: 15px;
-  color: #ffffff;
-}
-
-/* CÍRCULOS */
-.step-circle {
-  width: 32px;
+.admin-logo img {
   height: 32px;
-  background: white;
-  border-radius: 50%;
-  margin: auto;
-  border: 4px solid #007F78;
+  display: block;
 }
 
-/* Paso completado */
-.step.completed .step-circle {
-  background: #C7EDE5;
+.admin-nav {
+  display: flex;
+  gap: 22px;
 }
 
-/* Paso activo */
-.step.active .step-circle {
-  background: #FFFFFF;
-  border-color: #00A09A;
-  box-shadow: 0px 0px 8px rgba(0, 160, 154, 0.7);
+.admin-nav a {
+  text-decoration: none;
+  color: #004446;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.25s ease;
 }
 
-/* Responsive */
+.admin-nav a:hover {
+  color: #009688;
+}
+
+.admin-nav .active {
+  font-weight: 700;
+  border-bottom: 2px solid #009688;
+  padding-bottom: 2px;
+}
+
+.admin-nav .logout {
+  color: #b30000;
+  font-weight: 600;
+}
+
+/* Responsive admin header */
 @media (max-width: 600px) {
-  .step p {
-    font-size: 12px;
+  .admin-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 16px;
   }
 
-  .step-circle {
-    width: 26px;
-    height: 26px;
-  }
-
-  .progress-line {
-    top: 18px;
-    height: 6px;
+  .admin-nav {
+    gap: 12px;
+    flex-wrap: wrap;
   }
 }
+
+/* =======================================
+   ESTILOS DE BANDEJA DE ENTRADA (ADMIN)
+   ======================================= */
+
+.encargos {
+  background-color: #004446;
+  min-height: 100vh;
+  padding-top: 80px; /* espacio por el header admin */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedores centrados tipo bloque móvil */
+
+.encargos-header,
+.encargos-lista {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.encargos-header__inner,
+.encargos-lista__inner {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Título */
+
+.encargos-header__inner {
+  margin-top: 10px;
+}
+
+.encargos-header__inner h1 {
+  background-color: #ffffff;
+  color: #007b7b;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Lista de encargos */
+
+.encargos-lista__inner {
+  margin-top: 24px;
+  padding: 0 10px 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra tarjetas y mensaje */
+}
+
+/* Tarjetas */
+
+.encargo-card {
+  background-color: #ffffff;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  text-align: center;
+  color: #007b7b;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18);
+  width: 100%;
+}
+
+.encargo-card span {
+  font-weight: 700;
+}
+
+/* Mensaje cuando no hay encargos */
+
+.encargos-lista__inner p.sin-encargos {
+  display: inline-block;
+  margin-top: 60px;
+  padding: 14px 24px;
+  max-width: 280px;
+
+  background-color: #ffffff;
+  color: #004446;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* Footer dentro de la vista de encargos */
+.encargos .projects-footer {
+  margin-top: auto;
+}
+
+/* =========================
+   MODAL DETALLE ENCARGO
+   ========================= */
+
+.encargo-detalle-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;            /* oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.encargo-detalle-backdrop.is-open {
+  display: flex;
+}
+
+.encargo-detalle {
+  background-color: #004446;
+  color: #ffffff;
+  width: 90%;
+  max-width: 380px;
+  padding: 18px 18px 22px;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+/* Botón cerrar (X) */
+.encargo-detalle__cerrar {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Textos */
+.encargo-detalle h2 {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.encargo-detalle__texto {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.encargo-detalle__subtitulo {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Imagen */
+.encargo-detalle__imagen img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+/* Responsive muy pequeño */
+@media (max-width: 400px) {
+  .acciones-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* =========================
+   BOTONES MODAL – IZQ / DER
+   ========================= */
+
+/* Contenedor del área de botones */
+.encargo-detalle__acciones {
+  margin-top: 18px;
+  width: 100%;
+}
+
+/* El formulario ocupa todo el ancho */
+.encargo-detalle__acciones .acciones-form {
+  display: block;
+  width: 100%;
+  overflow: hidden;   /* para limpiar los floats */
+}
+
+/* Botones base */
+.encargo-detalle__acciones .btn-aceptar,
+.encargo-detalle__acciones .btn-rechazar {
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/* Aceptar: abajo a la IZQUIERDA */
+.encargo-detalle__acciones .btn-aceptar {
+  float: left;
+  background: #3ad28e;
+  color: #004446;
+  border-color: #3ad28e;
+}
+
+/* Rechazar: abajo a la DERECHA */
+.encargo-detalle__acciones .btn-rechazar {
+  float: right;
+  background: #ffffff;
+  color: #004446;
+  border-color: #ffffff;
+}
+
+/* Responsive muy pequeño: uno debajo del otro */
+@media (max-width: 400px) {
+  .encargo-detalle__acciones .btn-aceptar,
+  .encargo-detalle__acciones .btn-rechazar {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+    text-align: center;
+  }
+}
+
+/* ==================
+   VISTA PROCESOS
+   ================== */
+
+.procesos {
+  background-color: #004446;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedores centrados tipo "móvil" */
+.procesos-header,
+.procesos-lista {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.procesos-header__inner,
+.procesos-lista__inner {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Título */
+.procesos-header__inner {
+  margin-top: 10px;
+}
+
+.procesos-header__inner h1 {
+  background-color: #ffffff;
+  color: #007b7b;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Tarjetas de procesos */
+.procesos-lista__inner {
+  margin-top: 24px;
+  padding: 0 10px 50px;
+}
+
+.proceso-card {
+  background-color: #d8e3e5;
+  margin-bottom: 24px;
+  padding: 10px 14px 14px;
+  border-radius: 4px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.proceso-card__nombre {
+  text-align: center;
+  font-weight: 600;
+  color: #007b7b;
+  margin-bottom: 10px;
+}
+
+.proceso-card__info-extra {
+  margin-bottom: 10px;
+}
+
+.proceso-card__tags {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.proceso-card__tag {
+  background-color: #0b7c7f;
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+}
+
+.proceso-card__fecha {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #004446;
+}
+
+.proceso-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.proceso-card-link:hover .proceso-card {
+  transform: translateY(-2px);
+  transition: 0.15s ease;
+}
+
+/* Barra con círculos (track) */
+.proceso-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track-step {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #c0392b; /* pendiente */
+}
+
+.track-line {
+  flex: 1;
+  height: 4px;
+  margin: 0 4px;
+  background-color: #c0392b; /* pendiente */
+}
+
+.track-step.done {
+  background-color: #26e0b7;
+}
+.track-line.done {
+  background-color: #26e0b7;
+}
+
+.track-step.pending {
+  background-color: #c0392b;
+}
+.track-line.pending {
+  background-color: #c0392b;
+}
+
+/* Footer pegado al fondo */
+.procesos .projects-footer {
+  margin-top: auto;
+}
+
+/* ===========================
+   VISTA DETALLE DE PROCESO
+   =========================== */
+
+.proceso-detalle {
+  background-color: #004446;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proceso-detalle-header,
+.proceso-detalle-spec,
+.proceso-detalle-track,
+.proceso-detalle-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.proceso-detalle-header__inner,
+.proceso-detalle-spec__inner,
+.proceso-detalle-track__inner,
+.proceso-detalle-box__inner {
+  width: 100%;
+  max-width: 360px;
+}
+
+.proceso-detalle-header__inner {
+  margin-top: 10px;
+}
+
+.proceso-detalle-header__inner h1 {
+  background-color: #d8e3e5;
+  color: #007b7b;
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.proceso-detalle-spec__inner {
+  margin-top: 14px;
+}
+
+.proceso-detalle-spec__inner p {
+  background-color: #0b7c7f;
+  color: #ffffff;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.proceso-detalle-track__inner {
+  margin-top: 22px;
+}
+
+.proceso-detalle-box__inner {
+  margin-top: 26px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.proceso-detalle-box__inner button.btn-primary {
+  display: block;
+  margin: 0 auto 16px auto;
+  width: fit-content;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #0f6f78;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18);
+}
+
+#formCambioFecha {
+  margin-top: 15px;
+}
+
+#formCambioFecha label {
+  display: block;
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+#formCambioFecha input[type="date"] {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+#formCambioFecha .btn-primary {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+/* Footer pegado al fondo */
+.proceso-detalle .projects-footer {
+  margin-top: auto;
+}
+
+/* ===========================
+   MODAL DE ÉXITO EN PROCESO
+   =========================== */
+
+.proceso-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.proceso-modal-card {
+  background: #ffffff;
+  padding: 18px 22px;
+  max-width: 320px;
+  width: 90%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.proceso-modal-card h3 {
+  margin: 0 0 8px 0;
+  color: #0f6f78;
+  font-size: 1.1rem;
+}
+
+.proceso-modal-card p {
+  margin: 0;
+  color: #004446;
+  font-size: 0.9rem;
+}
+
+/* ====================
+   VISTA LOGIN
+   ==================== */
+
+.login {
+  background-color: #004446;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+/* Contenedor para que el footer quede siempre abajo */
+.login-content {
+  flex: 1;              /* Empuja el footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+.login-header,
+.login-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-header__inner,
+.login-box__inner {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Tarjeta título */
+.login-header__inner h1 {
+  background-color: #ffffff;
+  color: #007b7b;
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Caja blanca del login */
+.login-box__inner {
+  background-color: #ffffff;
+  padding: 24px 20px;
+  border-radius: 6px;
+  margin-top: 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+}
+
+/* Labels */
+.login-box label {
+  font-weight: 600;
+  color: #007b7b;
+  margin-top: 12px;
+  display: block;
+}
+
+/* Inputs */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #c5d7d7;
+  font-size: 15px;
+  outline: none;
+}
+
+/* Botón */
+.btn-login {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #0db79d;
+  color: white;
+  border: none;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.btn-login:hover {
+  background-color: #0aa68d;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FORMULARIO - PASO 1 (NUEVA PALETA VERDE AZULADA)
+   ========================================================= */
+
+/* Fondo general */
+.form-servicio {
+  background-color: #228F86;   /* verde/teal elegante */
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Panel central */
+.form-servicio__panel {
+  background-color: #228F86;   /* mismo color para uniformidad */
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto 60px;
+  padding: 40px 32px 50px;
+}
+
+/* Preguntas */
+.bloque-pregunta {
+  margin-bottom: 40px;
+}
+
+.bloque-pregunta h2 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Separador */
+.form-servicio__separador {
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 10px 0 30px;
+}
+
+/* ========== CHECKBOXES ========== */
+
+.servicio-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.servicio-opcion input {
+  display: none;
+}
+
+.servicio-opcion-box {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #EAF7F5;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 2px solid #0F4C48; 
+  background: transparent;
+  margin-right: 12px;
+}
+
+.servicio-opcion input:checked + .servicio-opcion-box .checkbox-custom {
+  background-color: #0F4C48;
+}
+
+.servicio-opcion .texto {
+  color: #0F4C48;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ========== BOTONES PERSONAL / TRABAJO ========== */
+
+.botones-espacio {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.btn-espacio {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-espacio input {
+  display: none;
+}
+
+.btn-espacio span {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 6px;
+  background-color: #17645E;   /* botón base */
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* Botón seleccionado */
+.btn-espacio input:checked + span {
+  background-color: #0F4C48;
+  color: #fff;
+}
+
+/* ========== BOTÓN SIGUIENTE ========== */
+
+.finalizar-wrap {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-final {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 6px;
+  border: none;
+  background-color: #17645E; /* coherente con los otros botones */
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-final:hover {
+  background-color: #0F4C48;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.form-servicio .projects-footer {
+  margin-top: auto;
+}
+
+/* =========================================================
+   FORMULARIO PERSONAL (MISMA PALETA)
+   ========================================================= */
+
+.campo-medida {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--light);  /* igual que tarjetas claras */
+  font-size: 1rem;
+  color: var(--text);
+  margin-top: 8px;
+}
+
+.campo-descripcion {
+  width: 100%;
+  height: 140px;
+  padding: 10px 12px;
+  background-color: var(--light);
+  border: none;
+  border-radius: 4px;
+  resize: none;
+  color: var(--text);
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Botón para subir imagen */
+.imagen-btn-wrap {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.imagen-btn {
+  background-color: var(--brand);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.imagen-btn input {
+  display: none;
+}
+
+/* Botón Finalizar */
+.btn-final {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  background-color: #0B5454;   /* color oscuro del botón */
+  color: white;
+  padding: 12px 0;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.2s ease-in-out;
+}
+
+.btn-final:hover {
+  background-color: #0A4747;
+  transform: translateY(-2px);
+}
+
+.btn-finalizar:hover {
+  background-color: #0c5a61;
+}
+
+.admin-secret-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  width: 80px;
+  height: 25px;
+  opacity: 0;            /* invisible */
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ===== Overrides para calendario en detalle de proceso ===== */
+
+/* Caja del bloque */
+.proceso-detalle-box__inner {
+  margin-top: 26px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Centrar el botón "Cambio del procedimiento" */
+.proceso-detalle-box__inner > .btn-primary {
+  display: block;
+  margin: 0 auto 12px;
+  width: fit-content;
+}
+
+/* Formulario de fecha */
+#formCambioFecha {
+  margin-top: 18px;
+  text-align: center; /* centramos el texto dentro del bloque */
+}
+
+/* Texto "Selecciona la fecha de agendamiento" bien legible */
+#formCambioFecha label,
+#formCambioFecha label strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #ffffff !important;   /* forzamos blanco */
+  font-size: 1rem;             /* un poco más grande */
+  font-weight: 600;            /* negrita */
+}
+
+/* Input de fecha */
+#formCambioFecha input[type="date"] {
+  width: 100%;
+  max-width: 230px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+/* Botón Enviar centrado */
+#formCambioFecha .btn-primary {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+

@@ -22,7 +22,7 @@
       <li><a href="index.html">Inicio</a></li>
       <li><a href="proyectos.html">Proyectos</a></li>
       <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="contacto.php">Contacto</a></li>
     </ul>
   </header>
 
@@ -42,7 +42,8 @@
           border-radius:10px;
           color:#0F3F4A;
           font-weight:600;
-          font-size:16px;">
+          font-size:16px;
+        ">
           Informamos que el proceso de agendamiento se encuentra actualmente
           en curso; puede observar su progreso mediante la lista de seguimiento.
         </p>
@@ -68,14 +69,25 @@
         </div>
       </section>
 
-      <!-- MENSAJE FINAL -->
-      <section class="bloque-pregunta" style="text-align:center; margin-top:30px;">
-        <h2>
-          Validación y confirmación de la cita final<br>
-          <span style="font-size:18px; font-weight:500;">
+      <!-- MENSAJE FINAL EN RECUADRO -->
+      <section class="bloque-pregunta" style="margin-top:30px; display:flex; justify-content:center;">
+        <div style="
+            background: rgba(255,255,255,0.9);
+            padding:20px 24px;
+            border-radius:10px;
+            max-width:360px;
+            text-align:center;
+        ">
+          <!-- 🔥 AQUÍ CAMBIA EL COLOR DEL TÍTULO -->
+          <h2 style="margin-bottom:6px; color:#0F3F4A;">
+            Validación y confirmación<br>de la cita final
+          </h2>
+
+          <!-- 🔥 Y AQUÍ EL TEXTO DE ABAJO CON EL MISMO COLOR -->
+          <p style="font-size:16px; font-weight:500; margin-top:0; color:#0F3F4A;">
             será enviada al correo proporcionado
-          </span>
-        </h2>
+          </p>
+        </div>
       </section>
 
     </div>
